@@ -441,39 +441,167 @@ print(a.mul())
 print(a.div())
 print(a.sub())
 print(a.add())
+# +
+class FourCal:
+    def __init__(self,first,second):
+        self.first=first
+        self.second=second
+    def add(self):
+        result=self.first+self.second
+        return result
+    def mul(self):
+        result=self.first*self.second
+        return result
+    def sub(self):
+        result=self.first-self.second
+        return result
+    def div(self):
+        result=self.first/self.second
+        return result
+    
+#상속
+class MoreFourCal(FourCal):
+    pass
+c=MoreFourCal(5,6)
+c.add()
+
+
 # -
 
+# ## 2021-07-02 practice
+
+# ### 연습문제 1
+
+# +
+#1
+def change(b):
+    return b.replace("s","$")
+    
+
+a="restart"
+#print(b)
+print(change(a))
+
+
+# +
+#2
+def change(a):
+    for i in range(len(a)):
+        if(i%2!=0):
+            print(a[i])
+        
+a="python"
+change(a)
+
+
+# +
+#3
+def change(a):
+    print(a[1][1][2])
+    print(a[2])
+    
+    
+a=[3,['a',['Life','is','good?']],[1,"pineapple"],"pear"]
+change(a)
+
+
+# +
+#4
+def input2(a,b,i):
+   b.append(a[i])
+    
+a=[1,2,3,4,5]
+b=[]
+input2(a,b,1)
+input2(a,b,3)
+input2(a,b,4)
+print(b)
+# -
+
+#5
+Systems=['Ubuntu',"Windows",[1,2]]
+Systems.reverse()
+print(Systems)
+
+#6
+Sample_list=['Python','Java',[1,3],'C++','C']
+Sample_list.pop(2)
+print(Sample_list)
+
+
+# +
+#7
+def output():
+        my_keys=list(my_dict.keys())
+        print(my_keys[0])
+        print(my_dict['name'])
+        print(my_keys[1])
+        print(my_dict['age'])
+    
+my_dict={'name':'tony','age':40}
+output()
+
+
+# +
+#8
+def input2(my_dict,key,value):
+    my_dict[key]=value
+
+my_dict={'name':'Tony','age':40}
+input2(my_dict,'address','Suwon')
+input2(my_dict,'postal code','4130')
+print(my_dict)
+# -
+
+#9
+if b>a :
+    print("b is greater than a")
+a=33
+b=50
+
+#10
+a='school'
+for i in range(len(a)):
+    print(a[i])
+
+#10-2
+a='school'
+test=[a[i] for i in range(len(a))]
+print(test)
+
+
+#11
+def output(x):
+    for i in range(1,x+1):
+        #print(i+1)
+        print(f"%d을 출력합니다"%i)
+output(10)
+
+
+#12
+def check(a):
+    for i in range(len(a)):
+        if(a[i]!="e" and a[i]!="s"):
+            print(a[i])
+a="estheresther"
+check(a)
 
 
 
+# ### 5-4 예외 처리 실습
 
+# +
+ex_lst=[9,7,0,0,1]
 
+try:
+    for i in ex_lst:
+        print(10/i)
+except ZeroDivisionError as e:
+    print(e)
+except IndexError as e:
+    print(e)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# -
 
 
 
