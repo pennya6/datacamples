@@ -604,5 +604,13 @@ except IndexError as e:
 # -
 
 
+# # 과제
+
+
+def my_function():
+    print("hello world")
+my_function
+
+
 
 

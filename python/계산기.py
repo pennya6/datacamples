@@ -90,15 +90,7 @@ def sksnrl(a,b):
     return a/b
 
 
-# 두개의 리스트
-#a=[] #숫자
-#b=[] #기호
-
-# 한개의 리스트
-#a=[]
-
 a=input("계산 할 숫자를 입력하세요(종료하고 싶다면 false를 입력하세요)")
-#change(a)
 
 #사용자에게 숫자 입력받기
 
@@ -107,14 +99,22 @@ for i in range(x):
     if(a[i]=='false'):
         print("종료")
         break
+    elif(a[i]=="="):
+        print("계산 시작")
     elif(a[i]=="*"):
         change(a[i-1])
         change(a[i+1])
         a[i-1]=mul(a[i-1],a[i+1])
+        # 계산한 숫자와 연산 삭제
+        del a[i]
+        del a[i+1]
     elif(a[i]=="/"):
         change(a[i-1])
         change(a[i+1])
         a[i-1]=sksnrl(a[i-1],a[i+1])
+        # 계산한 숫자와 연산 삭제
+        del a[i]
+        del a[i+1]
     else:
         print("우선 순위 기호 없음")
         
@@ -126,12 +126,18 @@ for i in range (y):
         change(a[i-1])
         change(a[i+1])
         a[i-1]=sub(a[i-1],a[i+1])
+        # 계산한 숫자와 연산 삭제
+        del a[i]
+        del a[i+1]
     elif(a[i]=="+"):
         change(a[i-1])
         change(a[i+1])
         a[i-1]=add(a[i-1],a[i+1])
+        # 계산한 숫자와 연산 삭제
+        del a[i]
+        del a[i+1]
     else:
-        print("종료")
+        print("계산종료")
 
 
 print(a)
